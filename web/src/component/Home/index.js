@@ -6,7 +6,9 @@ class Home extends Component {
     render() {
         return (
             <div className='App'>
-                hello
+                <p className="text">
+                    Welcome Biblioteca Library!
+                </p>
             </div>
         )
     }
