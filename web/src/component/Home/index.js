@@ -3,6 +3,11 @@ import {Button} from 'antd'
 import './index.less'
 
 class Home extends Component {
+
+    handleClick() {
+        this.props.history.push("/menu");
+    }
+
     render() {
         return (
             <div className='App'>
@@ -10,7 +15,7 @@ class Home extends Component {
                     Welcome Biblioteca Library!
                 </p>
                 <p className="btn">
-                    <Button type="primary">查看图书</Button>
+                    <Button type="primary" onClick={this.handleClick.bind(this)}>查看图书</Button>
                 </p>
             </div>
         )
