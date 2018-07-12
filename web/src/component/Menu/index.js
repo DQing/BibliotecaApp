@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {Layout, Menu, Icon} from 'antd';
 import Book from '../Book'
 import ReturnBook from '../ReturnBook'
+import Movie from '../Movie'
+import User from '../User'
 import './index.less'
 const {Header, Sider, Content} = Layout;
 
@@ -28,7 +30,7 @@ class Menus extends Component {
     }
 
     render() {
-        const menuArr = [<Book/>, <ReturnBook/>, 'nav3']
+        const menuArr = [<Book/>, <ReturnBook/>, <Movie/>, <User/>]
         const {key} = this.state
         return (
             <div className="menu-container">
@@ -51,7 +53,11 @@ class Menus extends Component {
                             </Menu.Item>
                             <Menu.Item key="3">
                                 <Icon type="upload"/>
-                                <span>nav 3</span>
+                                <span>电影列表</span>
+                            </Menu.Item>
+                            <Menu.Item key="4">
+                                <Icon type="user"/>
+                                <span>个人信息</span>
                             </Menu.Item>
                         </Menu>
                     </Sider>
