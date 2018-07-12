@@ -5,14 +5,15 @@ import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import App from './component/app'
 import {AppContainer} from 'react-hot-loader'
+import reducer from './reducer'
 import {CookiesProvider} from 'react-cookie';
 
-// const store = createStore(reducer, applyMiddleware(thunkMiddleware))
+const store = createStore(reducer, applyMiddleware(thunkMiddleware))
 
 const render = Component => {
     ReactDOM.render(
         <CookiesProvider>
-            <Provider>
+            <Provider store={store}>
                 <AppContainer>
                     <Component />
                 </AppContainer></Provider>

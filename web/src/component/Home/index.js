@@ -5,7 +5,7 @@ import './index.less'
 class Home extends Component {
 
     handleClick() {
-        this.props.history.push("/menu");
+        this.props.history.push("/login");
     }
 
     render() {
@@ -15,7 +15,7 @@ class Home extends Component {
                     Welcome Biblioteca Library!
                 </p>
                 <p className="btn">
-                    <Button type="primary" onClick={this.handleClick.bind(this)}>查看图书</Button>
+                    <Button type="primary" onClick={this.handleClick.bind(this)}>登录</Button>
                 </p>
             </div>
         )
