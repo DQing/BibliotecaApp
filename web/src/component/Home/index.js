@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Menu, Row, Col} from 'antd'
+import {Button} from 'antd'
 import './index.less'
 
 class Home extends Component {
@@ -8,6 +8,9 @@ class Home extends Component {
             <div className='App'>
                 <p className="text">
                     Welcome Biblioteca Library!
+                </p>
+                <p className="btn">
+                    <Button type="primary">查看图书</Button>
                 </p>
             </div>
         )
