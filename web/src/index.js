@@ -7,12 +7,12 @@ import App from './component/app'
 import {AppContainer} from 'react-hot-loader'
 import {CookiesProvider} from 'react-cookie';
 
-const store = createStore(reducer, applyMiddleware(thunkMiddleware))
+// const store = createStore(reducer, applyMiddleware(thunkMiddleware))
 
 const render = Component => {
     ReactDOM.render(
         <CookiesProvider>
-            <Provider store={store}>
+            <Provider>
                 <AppContainer>
                     <Component />
                 </AppContainer></Provider>

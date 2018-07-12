@@ -6,6 +6,7 @@ class Home extends Component {
     render() {
         return (
             <div className='App'>
+                hello
             </div>
         )
     }
