@@ -1,4 +1,4 @@
-const initState = {id: "0", name: "0", email: "", password: "", remember: ""}
+const initState = {name: "0", email: "", password: "", remember: "", gender: "", age: ""}
 export default (state = initState, action) => {
     switch (action.type) {
         case 'USER_DETAIL':

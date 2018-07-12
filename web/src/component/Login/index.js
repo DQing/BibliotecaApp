@@ -30,6 +30,12 @@ class Login extends Component {
         })
     }
 
+    componentWillReceiveProps({user}) {
+        if (user.email != "") {
+            this.props.history.push('/menu')
+        }
+    }
+
     handleIsAgree(e) {
         const value = e.target.checked
         this.setState({
