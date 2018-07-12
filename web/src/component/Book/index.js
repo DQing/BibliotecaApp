@@ -1,9 +1,31 @@
 import React, {Component} from 'react'
-import {Row, Col, Button, Popover} from 'antd'
+import {Row, Col, Button, Popover, message} from 'antd'
 import './index.less'
 import book from '../../image/1.jpg'
 
 class Book extends Component {
+    state = {
+        books: [book, book, book, book, book, book, book, book, book]
+    }
+
+    checkoutBook(index) {
+        let books = this.state.books
+        //假设book5处于不可用状态,借书则会失败
+        let arr = []
+        for (let i = 0; i < books.length; i++) {
+            if (i == 4 || i != index) {
+                arr.push(books[i])
+            }
+        }
+        this.setState({
+            books: arr
+        })
+        if (index === 4) {
+            message.info("此书现不可外借!")
+        } else {
+            message.success('借书成功!')
+        }
+    }
 
     render() {
         const content = (
@@ -14,7 +36,7 @@ class Book extends Component {
                 <p>位置:39行3列</p>
             </div>
         )
-        let bookArr = [book, book, book, book, book, book, book, book, book]
+        let bookArr = this.state.books
         return (
             <div className='container'>
                 <p className="title">
@@ -22,7 +44,7 @@ class Book extends Component {
                 </p>
                 <Row className="bookRow">
                     {
-                        bookArr.map(item=> {
+                        bookArr.map((item, index)=> {
                             return <Col span={6}>
                                 <div className="bookDetail">
                                     <Popover placement="right" content={content} title="图书信息">
@@ -30,6 +52,8 @@ class Book extends Component {
                                     </Popover>
                                     <div className="bookInfo">
                                         书名:成风破浪
+                                        <Button type="primary" size="small" className="btn"
+                                                onClick={this.checkoutBook.bind(this, index)}>借书</Button>
                                     </div>
 
                                 </div>

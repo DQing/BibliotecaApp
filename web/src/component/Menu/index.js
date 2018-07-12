@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import {Layout, Menu, Icon} from 'antd';
 import Book from '../Book'
+import ReturnBook from '../ReturnBook'
 import './index.less'
 const {Header, Sider, Content} = Layout;
 
 class Menus extends Component {
     state = {
         collapsed: false,
+        key: 1
     };
 
     toggle = () => {
@@ -15,7 +17,19 @@ class Menus extends Component {
         });
     }
 
+    logout() {
+        this.props.history.push("/");
+    }
+
+    selectMenu({key}) {
+        this.setState({
+            key
+        })
+    }
+
     render() {
+        const menuArr = [<Book/>, <ReturnBook/>, 'nav3']
+        const {key} = this.state
         return (
             <div className="menu-container">
                 <Layout>
@@ -25,14 +39,15 @@ class Menus extends Component {
                         collapsed={this.state.collapsed}
                     >
                         <div className="logo"/>
-                        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                        <Menu theme="dark" mode="inline" onClick={this.selectMenu.bind(this)}
+                              defaultSelectedKeys={['1']}>
                             <Menu.Item key="1">
                                 <Icon type="user"/>
-                                <span>列出书籍</span>
+                                <span>书籍列表</span>
                             </Menu.Item>
                             <Menu.Item key="2">
                                 <Icon type="video-camera"/>
-                                <span>nav 2</span>
+                                <span>还书</span>
                             </Menu.Item>
                             <Menu.Item key="3">
                                 <Icon type="upload"/>
@@ -47,9 +62,13 @@ class Menus extends Component {
                                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                                 onClick={this.toggle}
                             />
+                            <span className="quit" onClick={this.logout.bind(this)}><span
+                                className="text">退出</span><Icon type="logout"/></span>
                         </Header>
                         <Content style={{margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280}}>
-                            <Book/>
+                            {
+                                menuArr[key - 1]
+                            }
                         </Content>
                     </Layout>
                 </Layout>
