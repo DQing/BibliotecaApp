@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import ReturnBook from '../ReturnBook'
 import Movie from '../Movie'
 import User from '../User'
+import * as userAction from '../../action/User'
 import './index.less'
 import {withRouter} from "react-router-dom";
 
@@ -23,7 +24,8 @@ class Menus extends Component {
     }
 
     logout() {
-        this.state.user = {name: "0", email: "", password: "", remember: "", gender: "", age: ""};
+        let value = {name: "0", email: "", password: "", remember: "", gender: "", age: ""};
+        this.props.loginOut(value);
         this.props.history.push("/");
     }
 
@@ -90,5 +92,9 @@ class Menus extends Component {
 const mapStateToProps = state => ({
     user: state.user
 })
-const mapDispatchToProps = dispatch => ({})
+const mapDispatchToProps = dispatch => ({
+    loginOut: (value) => {
+        dispatch(userAction.loginOut(value))
+    }
+})
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Menus))

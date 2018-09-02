@@ -8,22 +8,17 @@ class Book extends Component {
         books: books
     }
 
-    checkoutBook(index) {
+    checkoutBook(item, index) {
         let books = this.state.books
-        //假设book5处于不可用状态,借书则会失败
-        let arr = []
-        for (let i = 0; i < books.length; i++) {
-            if (i == 4 || i != index) {
-                arr.push(books[i])
-            }
-        }
-        this.setState({
-            books: arr
-        })
-        if (index === 4) {
-            message.info("此书现不可外借!")
+        if (item.state) {
+            let arr = books.filter((ele => ele.tag !== index + 1));
+            this.setState({
+                books: arr
+            }, () => {
+                message.success('借书成功!')
+            })
         } else {
-            message.success('借书成功!')
+            message.info("此书现不可外借!")
         }
     }
 
@@ -45,9 +40,8 @@ class Book extends Component {
                                     <div className="bookInfo">
                                         书名:{item.name}
                                         <Button type="primary" size="small" className="btn"
-                                                onClick={this.checkoutBook.bind(this, index)}>借书</Button>
+                                                onClick={this.checkoutBook.bind(this, item, index)}>借书</Button>
                                     </div>
-
                                 </div>
                             </Col>
                         })

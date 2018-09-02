@@ -39,5 +39,5 @@ const mapStateToProps = state => ({
     user: state.user
 })
 
-const mapDispatchToProps = dispatch => ({})
+const mapDispatchToProps = () => ({})
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(User))

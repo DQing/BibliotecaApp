@@ -8,7 +8,7 @@ export const refreshUser = (data) => ({
 })
 export const login = (userData) => {
     return dispatch => {
-        (async() => {
+        (async () => {
             const res = await request.post('../api/users', userData)
             if (res && res.status === HTTP_STATUS_CODE.OK) {
                 return dispatch(refreshUser(res.body))
@@ -16,18 +16,7 @@ export const login = (userData) => {
         })()
     }
 }
-
-export const getUser = (id) => {
-    return dispatch => {
-        (async() => {
-            const res = await request.get(`../api/user/${id}`)
-            if (res && res.status === HTTP_STATUS_CODE.OK) {
-                return dispatch(refreshUser(res.body))
-            }
-        })()
-    }
-}
-export const initUser = (value) => {
+export const loginOut = (value) => {
     return dispatch => {
         return dispatch(refreshUser(value))
     }

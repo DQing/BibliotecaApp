@@ -14,9 +14,10 @@ import React from "react";
 
 export default [
     {
-        "tag": "1",
+        "tag": 1,
         "url": book1,
         "name": "重构",
+        "state": true,
         "content": <div>
             <p>书名:重构</p>
             <p>作者:熊节</p>
@@ -24,9 +25,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "2",
+        "tag": 2,
         "url": book2,
         "name": "关键对话",
+        "state": true,
         "content": <div>
             <p>书名:关键对话</p>
             <p>作者:Tomins</p>
@@ -34,9 +36,10 @@ export default [
             <p>位置:21行3列</p>
         </div>
     }, {
-        "tag": "3",
+        "tag": 3,
         "url": book3,
         "name": "自控力",
+        "state": true,
         "content": <div>
             <p>书名:自控力</p>
             <p>作者:凯丽 麦洁妮</p>
@@ -44,9 +47,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "4",
+        "tag": 4,
         "url": book4,
         "name": "如何阅读一本书",
+        "state": false,
         "content": <div>
             <p>书名:如何阅读一本书</p>
             <p>作者:XXX</p>
@@ -54,8 +58,9 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "5",
+        "tag": 5,
         "url": book5,
+        "state": false,
         "name": "三体",
         "content": <div>
             <p>书名:三体</p>
@@ -64,9 +69,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "6",
+        "tag": 6,
         "url": book6,
         "name": "文明是副产品",
+        "state": true,
         "content": <div>
             <p>书名:文明是副产品</p>
             <p>作者:郑也夫</p>
@@ -74,9 +80,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "7",
+        "tag": 7,
         "url": book7,
         "name": "精进",
+        "state": true,
         "content": <div>
             <p>书名:精进</p>
             <p>作者:XXXX</p>
@@ -84,9 +91,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "8",
+        "tag": 8,
         "url": book8,
         "name": "巴菲特的投资原则",
+        "state": true,
         "content": <div>
             <p>书名:巴菲特的投资原则</p>
             <p>作者:XXX</p>
@@ -94,9 +102,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "9",
+        "tag": 9,
         "url": book9,
         "name": "正念",
+        "state": true,
         "content": <div>
             <p>书名:正念</p>
             <p>作者:XXXX</p>
@@ -104,9 +113,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "10",
+        "tag": 10,
         "url": book10,
         "name": "丝绸之路",
+        "state": false,
         "content": <div>
             <p>书名:丝绸之路</p>
             <p>作者:XXXX</p>
@@ -114,9 +124,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "11",
+        "tag": 11,
         "url": book11,
         "name": "装帧台湾",
+        "state": true,
         "content": <div>
             <p>书名:装帧台湾</p>
             <p>作者:XXXX</p>
@@ -124,9 +135,10 @@ export default [
             <p>位置:39行3列</p>
         </div>
     }, {
-        "tag": "12",
+        "tag": 12,
         "url": book12,
         "name": "影响力",
+        "state": true,
         "content": <div>
             <p>书名:影响力</p>
             <p>作者:XXXX</p>
