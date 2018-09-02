@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {Row, Col, Button, Popover, message} from 'antd'
 import './index.less'
-import book from '../../image/1.jpg'
+import books from '../../constant/bookInfo.js'
 
 class Book extends Component {
     state = {
-        books: [book, book, book, book, book, book, book, book, book]
+        books: books
     }
 
     checkoutBook(index) {
@@ -28,14 +28,6 @@ class Book extends Component {
     }
 
     render() {
-        const content = (
-            <div>
-                <p>书名:成风破浪</p>
-                <p>作者:三毛</p>
-                <p>出版日期:2000.1.2</p>
-                <p>位置:39行3列</p>
-            </div>
-        )
         let bookArr = this.state.books
         return (
             <div className='container'>
@@ -44,14 +36,14 @@ class Book extends Component {
                 </p>
                 <Row className="bookRow">
                     {
-                        bookArr.map((item, index)=> {
+                        bookArr.map((item, index) => {
                             return <Col span={6}>
                                 <div className="bookDetail">
-                                    <Popover placement="right" content={content} title="图书信息">
-                                        <img src={item} alt="12"/>
+                                    <Popover placement="right" content={item.content} title="图书信息">
+                                        <img src={item.url} alt="12"/>
                                     </Popover>
                                     <div className="bookInfo">
-                                        书名:成风破浪
+                                        书名:{item.name}
                                         <Button type="primary" size="small" className="btn"
                                                 onClick={this.checkoutBook.bind(this, index)}>借书</Button>
                                     </div>

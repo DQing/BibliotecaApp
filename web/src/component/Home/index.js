@@ -12,10 +12,10 @@ class Home extends Component {
         return (
             <div className='App'>
                 <p className="text">
-                    Welcome Biblioteca Library!
+                    Welcome To Biblioteca Library!
                 </p>
                 <p className="btn">
-                    <Button type="primary" onClick={this.handleClick.bind(this)}>登录</Button>
+                    <Button type="primary" onClick={this.handleClick.bind(this)} htmlType={""}>登录</Button>
                 </p>
             </div>
         )

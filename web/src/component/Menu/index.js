@@ -1,10 +1,13 @@
 import React, {Component} from 'react'
-import {Layout, Menu, Icon} from 'antd';
+import {Icon, Layout, Menu} from 'antd';
 import Book from '../Book'
+import {connect} from 'react-redux'
 import ReturnBook from '../ReturnBook'
 import Movie from '../Movie'
 import User from '../User'
 import './index.less'
+import {withRouter} from "react-router-dom";
+
 const {Header, Sider, Content} = Layout;
 
 class Menus extends Component {
@@ -20,6 +23,7 @@ class Menus extends Component {
     }
 
     logout() {
+        this.state.user = {name: "0", email: "", password: "", remember: "", gender: "", age: ""};
         this.props.history.push("/");
     }
 
@@ -82,4 +86,9 @@ class Menus extends Component {
         )
     }
 }
-export default Menus
+
+const mapStateToProps = state => ({
+    user: state.user
+})
+const mapDispatchToProps = dispatch => ({})
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Menus))

@@ -17,7 +17,7 @@ async function errHandler(res) {
     return null
 }
 
-export const get = async(url) => {
+export const get = async (url) => {
     try {
         const res = await fetch(url, {
             method: HTTP_METHOD.GET,
@@ -39,7 +39,7 @@ export const get = async(url) => {
     }
 }
 
-export const del = async(url) => {
+export const del = async (url) => {
     try {
         const res = await fetch(url, {
             method: HTTP_METHOD.DELETE,
@@ -58,7 +58,7 @@ export const del = async(url) => {
     }
 }
 
-export const post = async(url, user) => {
+export const post = async (url, user) => {
     try {
         const res = await fetch(url, {
             method: HTTP_METHOD.POST,
@@ -82,7 +82,7 @@ export const post = async(url, user) => {
     }
 }
 
-export const update = async(url, data) => {
+export const update = async (url, data) => {
     try {
         const res = await fetch(url, {
             method: HTTP_METHOD.PUT,

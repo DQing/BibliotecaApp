@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Form, Icon, Input, Button, Checkbox, message} from 'antd'
+import {Form, Icon, Input, Button, Checkbox} from 'antd'
 import {connect} from 'react-redux'
 import {withRouter} from "react-router-dom"
 import {login} from '../../action/User'
@@ -31,7 +31,7 @@ class Login extends Component {
     }
 
     componentWillReceiveProps({user}) {
-        if (user.email != "") {
+        if (user.email !== "") {
             this.props.history.push('/menu')
         }
     }
@@ -49,7 +49,7 @@ class Login extends Component {
         return (
             <div className='Login'>
                 <Form className='login-form'>
-                    <div className='login-title'>登陆平台</div>
+                    <div className='login-title'>登录平台</div>
                     <FormItem>
                         {getFieldDecorator('email', {
                             rules: [{required: true, message: '请输入邮箱!'}]

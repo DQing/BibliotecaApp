@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Row, Col, Button, Popover, message} from 'antd'
 import './index.less'
-import book from '../../image/1.jpg'
+import book from '../../image/movie/movie1.jpg'
 
 class Movie extends Component {
     state = {
